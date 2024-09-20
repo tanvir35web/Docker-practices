@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend  # Path to your frontend Dockerfile and app
+      dockerfile: Dockerfile
+    container_name: frontend-container
+    ports:
+      - "3000:80"  # Mapping frontend container's NGINX port 80 to host's port 3000
+    depends_on:
+      - backend  # Ensure the backend starts first
+
+  backend:
+    build:
+      context: ./backend  # Path to your backend Dockerfile and app
+      dockerfile: Dockerfile
+    container_name: backend-container
+    ports:
+      - "3001:3001"  # Backend app port
