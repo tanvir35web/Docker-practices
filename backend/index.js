@@ -37,7 +37,7 @@ app.use(cors({
 }));
 
 app.get('/api/users', (req, res) => {
-    res.json({ massage: "Data fetch succesfully", data: userList });
+    res.json({ massage: "Data fetch successfully", data: userList });
 });
 
 app.listen(PORT, () => {
